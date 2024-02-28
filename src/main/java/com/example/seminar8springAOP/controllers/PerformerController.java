@@ -17,26 +17,26 @@ public class PerformerController {
         service = service1;
     }
 
-    @GetMapping
+    @GetMapping("/user")
     public List<String> getAllPerformers() {
         return service.getAllPerformers();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/user/{id}")
     public String getPerformerById(@PathVariable Long id) {
         return service.getPerformerById(id).toString();
     }
-    @GetMapping("/working")
+    @GetMapping("/user/working")
     public List<String> getPerformerByStatus(){
         return service.getPerformerByStatus();
     }
 
-    @PostMapping
+    @GetMapping("/admin/create")
     public String createPerformer(@RequestBody Performer note) {
         return service.createPerformer(note).toString();
     }
 
-    @DeleteMapping("/{id}")
+    @GetMapping("/admin/delete/{id}")
     public void deletePerformer(@PathVariable Long id) {
         service.deletePerformer(id);
     }

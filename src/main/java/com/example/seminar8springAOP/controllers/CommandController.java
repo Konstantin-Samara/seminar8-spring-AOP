@@ -17,36 +17,38 @@ public class CommandController {
         service = service1;
     }
 
-    @GetMapping
+    @GetMapping("/user")
     public List<String> getAllCommands() {
         return service.getAllCommands();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/user/{id}")
     public String getCommandById(@PathVariable Long id) {
         return service.getCommandById(id).toString();
     }
-    @GetMapping("/running")
+
+    @GetMapping("/user/running")
     public List<String> getCmmandByStatus(){
         return service.getCommandByStatus();
     }
 
-    @PostMapping
+    @GetMapping("/admin")
     public String createCommand(@RequestBody Command note) {
         return service.createCommand(note).toString();
     }
 
-    @PutMapping("/{id}")
+    @GetMapping("/admin/change/{id}")
     public String changeCommandStatus(@PathVariable Long id) {
         return service.changeCommandStatus(id).toString();
     }
 
-    @DeleteMapping("/{id}")
+    @GetMapping("/admin/delete/{id}")
     public void deleteCommand(@PathVariable Long id) {
         service.deleteCommand(id);
     }
-    @PutMapping("/{id}/change/{id1}")
-    public String addPerformer(@PathVariable Long id, @PathVariable Long id1) {
+
+    @GetMapping("/admin/{id}/change/{id1}")
+    public String changeCommandPerformer(@PathVariable Long id, @PathVariable Long id1) {
 
         return service.changeCommandPerformer(id,id1).toString();
 
