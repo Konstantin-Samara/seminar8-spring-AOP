@@ -1,43 +1,28 @@
 package com.example.seminar8springAOP.controllers;
 
 import com.example.seminar8springAOP.models.Performer;
-import com.example.seminar8springAOP.services.My_Service;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
 @RequestMapping("/api/performers")
-public class PerformerController {
-    private final My_Service service;
-
-    @Autowired
-    public PerformerController(My_Service service1) {
-        service = service1;
-    }
+public interface PerformerController {
 
     @GetMapping("/user")
-    public List<String> getAllPerformers() {
-        return service.getAllPerformers();
-    }
+    public List<String> getAllPerformers();
 
     @GetMapping("/user/{id}")
-    public String getPerformerById(@PathVariable Long id) {
-        return service.getPerformerById(id).toString();
-    }
+    public String getPerformerById(@PathVariable Long id);
+
     @GetMapping("/user/working")
-    public List<String> getPerformerByStatus(){
-        return service.getPerformerByStatus();
-    }
+    public List<String> getPerformerByStatus();
 
     @GetMapping("/admin/create")
-    public String createPerformer(@RequestBody Performer note) {
-        return service.createPerformer(note).toString();
-    }
+    public String createPerformer(@RequestBody Performer note);
 
     @GetMapping("/admin/delete/{id}")
-    public void deletePerformer(@PathVariable Long id) {
-        service.deletePerformer(id);
-    }
+    public void deletePerformer(@PathVariable Long id);
+
+    @GetMapping("/admin/complete")
+    public List<String> complete();
 }

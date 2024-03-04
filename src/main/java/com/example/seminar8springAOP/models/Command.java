@@ -65,5 +65,16 @@ public class Command {
     public String toString(){
         return this.id+" "+this.description+" "+this.status+" "+this.runningDate+" "+this.performersId;
     }
+    public static class CommandBuilder {
+        private final Command command = new Command();
+        public CommandBuilder description(String description){
+            command.setDescription(description);
+            return this;
+        }
+        public Command build(){
+            return command;
+        }
+
+    }
 
 }
