@@ -1,4 +1,4 @@
-package com.example.seminar8springAOP.Factorys;
+package com.example.seminar8springAOP.factorys;
 
 import com.example.seminar8springAOP.models.Performer;
 
