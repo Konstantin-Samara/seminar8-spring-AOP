@@ -1,6 +1,6 @@
 package com.example.seminar8springAOP.services;
 
-import com.example.seminar8springAOP.factorys.PerformerFactoryImpl;
+import com.example.seminar8springAOP.myFactorys.PerformerFactoryImpl;
 import com.example.seminar8springAOP.datas.PerformerRepository;
 import com.example.seminar8springAOP.models.Performer;
 import org.springframework.beans.factory.annotation.Autowired;
