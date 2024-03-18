@@ -2,7 +2,6 @@ package com.example.seminar8springAOP.controllers;
 
 import com.example.seminar8springAOP.facade.Facade;
 import com.example.seminar8springAOP.models.Command;
-import com.example.seminar8springAOP.services.CommandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
